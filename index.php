@@ -1,6 +1,7 @@
 <?php
 get_header();
 ?>
-<div id="app"></div>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
 <?php
 get_footer();

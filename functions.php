@@ -55,13 +55,13 @@ add_action( 'widgets_init', __NAMESPACE__ . '\\widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
-
 function scripts() {
 	$rand = substr(md5(rand()), 0, 7);
-	wp_enqueue_style( 'style.css', get_template_directory_uri() . '/dist/css/app.css',false,$rand,'all');
-	wp_enqueue_style( 'style.css', get_template_directory_uri() . '/dist/css/chunk-vendors.css',false,$rand,'all');
-	wp_enqueue_script( 'main-vue-app', get_template_directory_uri() . '/dist/js/app.js', array(), $rand, true );
-	wp_enqueue_script( 'main-vue-vendors', get_template_directory_uri() . '/dist/js/chunk-vendors.js', array(), $rand, true );
+	wp_enqueue_style( 'style.css', get_template_directory_uri() . '/app/build/static/css/main.chunk.css',false,$rand,'all');
+	// wp_enqueue_style( 'style.css', get_template_directory_uri() . '/dist/css/chunk-vendors.css',false,$rand,'all');
+	wp_enqueue_script( 'main-react-app', get_template_directory_uri() . '/app/build/static/js/main.chunk.js', array(), $rand, true );
+	wp_enqueue_script( 'main-react-runtime', get_template_directory_uri() . '/app/build/static/js/runtime~main.js', array(), $rand, true );
+	wp_enqueue_script( 'main-react-vendors', get_template_directory_uri() . '/app/build/static/js/2.chunk.js', array(), $rand, true );
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\scripts' );
 
